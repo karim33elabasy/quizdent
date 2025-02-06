@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "67705160022",
+    "project_id": "quizdent-karim",
+    "storage_bucket": "quizdent-karim.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:67705160022:android:fa162907854c15bcccd6f7",
+        "android_client_info": {
+          "package_name": "com.karimelabasy.quizdent.quizdent"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAHsgvTSs255AcU3lap4DpseZRqKeRbKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
