@@ -64,7 +64,7 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<Either<Failure, Unit>> forgetPassword({required String email}) async{
     try{
-      await firebaseAuth.currentUser!.sendEmailVerification();
+      await firebaseAuth.sendPasswordResetEmail(email: email);
       return const Right(unit);
     }on FirebaseAuthException catch(firebaseAuthException){
       return Left(

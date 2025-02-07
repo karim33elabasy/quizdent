@@ -7,5 +7,9 @@ abstract class StringsOfAuth{
   static const String confirmPasswordWord = 'Confirm Password';
   static const String firstNameWord = 'First Name';
   static const String lastNameWord = 'LastName';
-
+  static const String resetPasswordWord = 'Reset Password';
+  static const String resetPasswordInstructions = 'Please enter your email and password to login.';
+  static const String resetPasswordConfirmBoxTitle = 'Reset Password Confirmation';
+  static const String resetPasswordConfirmBoxMessage = 'Email has been sent to your email address. Please check your inbox for the reset link.';
+  static const String sendResetLinkWord = 'Send Reset Link';
 }

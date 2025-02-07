@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizdent/core/constants/app_assets.dart';
 import 'package:quizdent/core/constants/sizes.dart';
 import 'package:quizdent/core/strings/strings_of_auth.dart';
 import 'package:quizdent/core/widgets/my_button.dart';
@@ -19,7 +20,7 @@ class _AuthBodyState extends State<AuthBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(StringsOfAuth.authSubtitle,style: Theme.of(context).textTheme.headlineMedium),
+        Image.asset(AppAssets.authPhoto),
         const SizedBox(height: Sizes.xl,),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

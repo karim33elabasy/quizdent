@@ -30,7 +30,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   _forgetPassword(ForgetPasswordAuthEvent event, Emitter<AuthState> emit) async{
-    emit(LoadingAuthState());
+    emit(LoadingForgetPasswordAuthState());
     var result = await _authRepo.forgetPassword(email: event.email);
     result.fold(
             (error){emit(FailureAuthState(errorMessage: error.errorMessage));},
