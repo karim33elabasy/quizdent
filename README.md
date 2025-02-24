@@ -1,23 +1,23 @@
-###📌 QuizDent
+### 📌 QuizDent
 🚀 QuizDent is an engaging quiz-based application designed for dentists and dental students. It provides interactive quizzes on various dental topics such as oral anatomy, dental procedures, and clinical knowledge, helping users test and enhance their expertise in a fun and educational way.
 
-##📷 Screenshots
+## 📷 Screenshots
 (Will be added soon)
 
-##✨ Features
-#🔐 Authentication Features
+## ✨ Features
+# 🔐 Authentication Features
 ✅ Sign Up: Create a new account using email and password.
 ✅ Login: Secure authentication with Firebase Authentication.
 ✅ Password Recovery: Reset password via email.
 ✅ User Persistence: Automatically keep users logged in.
 
-#🏆 Quiz Features (Coming Soon!)
-#🧠 Dental Quizzes covering multiple categories.
-#📊 Performance Tracking to measure progress.
-#🎖️ Badges & Leaderboards to compete with others.
-#🏗️ Project Structure
+# 🏆 Quiz Features (Coming Soon!)
+# 🧠 Dental Quizzes covering multiple categories.
+# 📊 Performance Tracking to measure progress.
+# 🎖️ Badges & Leaderboards to compete with others.
+# 🏗️ Project Structure
 
-'''
+''' 
 QuizDent
 │   app.dart
 │   main.dart
@@ -52,9 +52,9 @@ QuizDent
         │   ├── widgets
         │   └── auth_screen.dart
         └── ...'
-'''
+''' 
 
-##🛠️ Technologies Used
+## 🛠️ Technologies Used
 Flutter (Dart)
 Firebase Authentication
 Cloud Firestore
@@ -62,7 +62,7 @@ Dartz (Functional Programming)
 BLoC (Business Logic Component)
 GetIt (Service Locator)
 
-##🚀 Getting Started
+## 🚀 Getting Started
 1️⃣ Clone the repository
 '''
 git clone https://github.com/your-username/QuizDent.git
@@ -79,14 +79,15 @@ flutter pub get
 flutter run
 '''
 
-##🏆 Why This Project?
+## 🏆 Why This Project?
 This project serves as a portfolio piece demonstrating my Flutter development skills, including:
 
 Authentication implementation using Firebase
 State management with BLoC
 Clean Architecture & Dependency Injection (GetIt)
 Scalable folder structure for real-world applications
-📩 Contact
+
+## 📩 Contact
 🚀 Created by: Karim Elabasy
 📧 Email: karim33elabasy@gmail.com
 
