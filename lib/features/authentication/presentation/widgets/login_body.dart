@@ -7,10 +7,10 @@ import 'package:quizdent/core/validators/validation.dart';
 import 'package:quizdent/core/widgets/dialogs/show_my_dialog.dart';
 import 'package:quizdent/core/widgets/my_loading_button.dart';
 import 'package:quizdent/core/widgets/my_tff.dart';
-import 'package:quizdent/features/authentication/data/models/login_model.dart';
-import 'package:quizdent/features/authentication/manager/auth_bloc.dart';
-import 'package:quizdent/features/authentication/manager/auth_event.dart';
-import 'package:quizdent/features/authentication/manager/auth_state.dart';
+import 'package:quizdent/features/authentication/domain/utilities/login_entity.dart';
+import 'package:quizdent/features/authentication/presentation/manager/auth_bloc.dart';
+import 'package:quizdent/features/authentication/presentation/manager/auth_event.dart';
+import 'package:quizdent/features/authentication/presentation/manager/auth_state.dart';
 
 class LoginBody extends StatelessWidget {
   const LoginBody({super.key});
@@ -23,8 +23,8 @@ class LoginBody extends StatelessWidget {
 
     login() {
       if(loginFormKey.currentState?.validate() ?? false){
-        final loginModel = LoginModel(email: email.text, password: password.text);
-        context.read<AuthBloc>().add(LoginAuthEvent(loginModel: loginModel));
+        final loginEntity = LoginEntity(email: email.text, password: password.text);
+        context.read<AuthBloc>().add(LoginAuthEvent(loginEntity: loginEntity));
       }
     }
 

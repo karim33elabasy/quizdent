@@ -1,12 +1,8 @@
-class SignupModel {
-  final String firstName;
-  final String lastName;
-  final String email;
-  final String password;
-  final DateTime createdAt;
+import 'package:quizdent/features/authentication/domain/utilities/signup_entity.dart';
 
+class SignupModel extends SignupEntity {
 
-  const SignupModel({required this.firstName, required this.lastName, required this.email, required this.password, required this.createdAt});
+  const SignupModel({required super.firstName, required super.lastName, required super.email, required super.password, required super.createdAt});
 
   Map<String, dynamic> toJson() {
     return {
@@ -17,5 +13,4 @@ class SignupModel {
       'createdAt': createdAt.toIso8601String()
     };
   }
-
 }

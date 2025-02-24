@@ -1,8 +1,8 @@
-class LoginModel {
-  final String email;
-  final String password;
+import 'package:quizdent/features/authentication/domain/utilities/login_entity.dart';
 
-  const LoginModel({required this.email, required this.password});
+class LoginModel extends LoginEntity {
+
+  const LoginModel({required super.email, required super.password});
   
   Map<String, dynamic> toJson() {
     return {

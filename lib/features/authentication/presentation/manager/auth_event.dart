@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:quizdent/features/authentication/data/models/login_model.dart';
-import 'package:quizdent/features/authentication/data/models/signup_model.dart';
+import 'package:quizdent/features/authentication/domain/utilities/login_entity.dart';
+import 'package:quizdent/features/authentication/domain/utilities/signup_entity.dart';
 
 abstract class AuthEvent extends Equatable{
   const AuthEvent();
@@ -9,13 +9,13 @@ abstract class AuthEvent extends Equatable{
 }
 
 class LoginAuthEvent extends AuthEvent{
-  final LoginModel loginModel;
-  const LoginAuthEvent({required this.loginModel});
+  final LoginEntity loginEntity;
+  const LoginAuthEvent({required this.loginEntity});
 }
 
 class SignupAuthEvent extends AuthEvent{
-  final SignupModel signupModel;
-  const SignupAuthEvent({required this.signupModel});
+  final SignupEntity signupEntity;
+  const SignupAuthEvent({required this.signupEntity});
 }
 
 class ForgetPasswordAuthEvent extends AuthEvent{

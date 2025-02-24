@@ -1,11 +1,8 @@
-import 'package:equatable/equatable.dart';
+import 'package:quizdent/features/authentication/domain/utilities/user_entity.dart';
 
-class UserModel extends Equatable{
-  final String firstName;
-  final String lastName;
-  final String email;
+class UserModel extends UserEntity{
 
-  const UserModel({required this.firstName, required this.lastName, required this.email});
+  const UserModel({required super.firstName, required super.lastName, required super.email});
 
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
@@ -23,6 +20,4 @@ class UserModel extends Equatable{
     };
   }
 
-  @override
-  get props => [firstName, lastName, email];
 }

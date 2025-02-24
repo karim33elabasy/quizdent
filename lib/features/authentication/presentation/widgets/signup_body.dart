@@ -7,10 +7,10 @@ import 'package:quizdent/core/validators/validation.dart';
 import 'package:quizdent/core/widgets/dialogs/show_my_dialog.dart';
 import 'package:quizdent/core/widgets/my_loading_button.dart';
 import 'package:quizdent/core/widgets/my_tff.dart';
-import 'package:quizdent/features/authentication/data/models/signup_model.dart';
-import 'package:quizdent/features/authentication/manager/auth_bloc.dart';
-import 'package:quizdent/features/authentication/manager/auth_event.dart';
-import 'package:quizdent/features/authentication/manager/auth_state.dart';
+import 'package:quizdent/features/authentication/domain/utilities/signup_entity.dart';
+import 'package:quizdent/features/authentication/presentation/manager/auth_bloc.dart';
+import 'package:quizdent/features/authentication/presentation/manager/auth_event.dart';
+import 'package:quizdent/features/authentication/presentation/manager/auth_state.dart';
 
 class SignupBody extends StatelessWidget {
   const SignupBody({super.key});
@@ -26,8 +26,8 @@ class SignupBody extends StatelessWidget {
 
     signUp() {
       if(sinUpFormKey.currentState?.validate() ?? false){
-        final signupModel = SignupModel(firstName: firstName.text, lastName: lastName.text, email: email.text, password: password.text,createdAt: DateTime.now());
-        context.read<AuthBloc>().add(SignupAuthEvent(signupModel: signupModel));
+        final signupEntity = SignupEntity(firstName: firstName.text, lastName: lastName.text, email: email.text, password: password.text,createdAt: DateTime.now());
+        context.read<AuthBloc>().add(SignupAuthEvent(signupEntity: signupEntity));
       }
     }
 
