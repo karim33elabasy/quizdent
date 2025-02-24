@@ -1,16 +1,93 @@
-# quizdent
+### 📌 QuizDent
+🚀 QuizDent is an engaging quiz-based application designed for dentists and dental students. It provides interactive quizzes on various dental topics such as oral anatomy, dental procedures, and clinical knowledge, helping users test and enhance their expertise in a fun and educational way.
 
-Challenge yourself with fun and educational dental quizzes! Improve your skills, earn badges, and compete with others in topics like oral anatomy, dental procedures, and more. Perfect for dentists and dental students!
+## 📷 Screenshots
+(Will be added soon)
 
-## Getting Started
+## ✨ Features
+# 🔐 Authentication Features
+✅ Sign Up: Create a new account using email and password.
+✅ Login: Secure authentication with Firebase Authentication.
+✅ Password Recovery: Reset password via email.
+✅ User Persistence: Automatically keep users logged in.
 
-This project is a starting point for a Flutter application.
+# 🏆 Quiz Features (Coming Soon!)
+# 🧠 Dental Quizzes covering multiple categories.
+# 📊 Performance Tracking to measure progress.
+# 🎖️ Badges & Leaderboards to compete with others.
+# 🏗️ Project Structure
 
-A few resources to get you started if this is your first Flutter project:
+``` 
+QuizDent
+│   app.dart
+│   main.dart
+│   project_structure.txt
+│   
+├── core
+│   ├── constants
+│   ├── failure
+│   ├── strings
+│   ├── themes
+│   ├── usecases
+│   ├── utils
+│   ├── validators
+│   ├── widgets
+│   └── dialogs
+│
+└── features
+    └── authentication
+        ├── data
+        │   ├── datasources
+        │   ├── mappers
+        │   ├── models
+        │   ├── repo
+        │   └── ...
+        ├── domain
+        │   ├── repo
+        │   ├── usecases
+        │   ├── utilities
+        │   └── ...
+        ├── presentation
+        │   ├── manager
+        │   ├── widgets
+        │   └── auth_screen.dart
+        └── ...'
+``` 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🛠️ Technologies Used
+Flutter (Dart)
+Firebase Authentication
+Cloud Firestore
+Dartz (Functional Programming)
+BLoC (Business Logic Component)
+GetIt (Service Locator)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚀 Getting Started
+1️⃣ Clone the repository
+```
+git clone https://github.com/your-username/QuizDent.git
+```
+```
+cd QuizDent
+```
+2️⃣ Install dependencies
+```
+flutter pub get
+```
+4️⃣ Run the app
+```
+flutter run
+```
+
+## 🏆 Why This Project?
+This project serves as a portfolio piece demonstrating my Flutter development skills, including:
+
+Authentication implementation using Firebase
+State management with BLoC
+Clean Architecture & Dependency Injection (GetIt)
+Scalable folder structure for real-world applications
+
+## 📩 Contact
+🚀 Created by: Karim Elabasy
+📧 Email: karim33elabasy@gmail.com
+
