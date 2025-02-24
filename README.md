@@ -17,7 +17,7 @@
 # 🎖️ Badges & Leaderboards to compete with others.
 # 🏗️ Project Structure
 
-''' 
+``` 
 QuizDent
 │   app.dart
 │   main.dart
@@ -52,7 +52,7 @@ QuizDent
         │   ├── widgets
         │   └── auth_screen.dart
         └── ...'
-''' 
+``` 
 
 ## 🛠️ Technologies Used
 Flutter (Dart)
@@ -64,20 +64,20 @@ GetIt (Service Locator)
 
 ## 🚀 Getting Started
 1️⃣ Clone the repository
-'''
+```
 git clone https://github.com/your-username/QuizDent.git
-'''
-'''
+```
+```
 cd QuizDent
-'''
+```
 2️⃣ Install dependencies
-'''
+```
 flutter pub get
-'''
+```
 4️⃣ Run the app
-'''
+```
 flutter run
-'''
+```
 
 ## 🏆 Why This Project?
 This project serves as a portfolio piece demonstrating my Flutter development skills, including:
