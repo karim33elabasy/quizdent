@@ -2,8 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quizdent/features/authentication/domain/usecases/forget_password_usecase.dart';
 import 'package:quizdent/features/authentication/domain/usecases/login_usecase.dart';
 import 'package:quizdent/features/authentication/domain/usecases/signup_usecase.dart';
-import 'package:quizdent/features/authentication/presentation/manager/auth_event.dart';
-import 'package:quizdent/features/authentication/presentation/manager/auth_state.dart';
+import 'package:quizdent/features/authentication/presentation/manager/auth_bloc/auth_event.dart';
+import 'package:quizdent/features/authentication/presentation/manager/auth_bloc/auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final LoginUsecase loginUseCase;

@@ -18,7 +18,7 @@ void setupLocator() {
   getIt.registerLazySingleton<FirebaseAuthRepoImpl>(()=> FirebaseAuthRepoImpl(firebaseAuth: getIt(), firestore: getIt()));
 
   // Register Repo Impl
-  getIt.registerLazySingleton<AuthRepoImpl>(() => AuthRepoImpl(loginRepo: getIt<FirebaseAuthRepoImpl>(),),);
+  getIt.registerLazySingleton<AuthRepoImpl>(() => AuthRepoImpl(authRepo: getIt<FirebaseAuthRepoImpl>(),),);
 
   // Register Use Cases
   getIt.registerLazySingleton<LoginUsecase>(() => LoginUsecase(authRepo: getIt<AuthRepoImpl>()));

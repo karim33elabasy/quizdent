@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "67705160022",
-    "project_id": "quizdent-karim",
-    "storage_bucket": "quizdent-karim.firebasestorage.app"
+    "project_number": "830161432722",
+    "project_id": "american-center-82eff",
+    "storage_bucket": "american-center-82eff.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:67705160022:android:fa162907854c15bcccd6f7",
+        "mobilesdk_app_id": "1:830161432722:android:c7b78e80f254839aadb64b",
         "android_client_info": {
           "package_name": "com.karimelabasy.quizdent.quizdent"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDAHsgvTSs255AcU3lap4DpseZRqKeRbKU"
+          "current_key": "AIzaSyAkUEuNidmC2U4bk_P_Y20yBw6rt729KeY"
         }
       ],
       "services": {

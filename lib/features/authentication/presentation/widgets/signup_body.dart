@@ -3,17 +3,20 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quizdent/core/constants/sizes.dart';
 import 'package:quizdent/core/strings/strings_of_auth.dart';
 import 'package:quizdent/core/strings/strings_of_errors.dart';
-import 'package:quizdent/core/validators/validation.dart';
+import 'package:quizdent/core/validators_and_helpers/validation.dart';
 import 'package:quizdent/core/widgets/dialogs/show_my_dialog.dart';
 import 'package:quizdent/core/widgets/my_loading_button.dart';
 import 'package:quizdent/core/widgets/my_tff.dart';
+import 'package:quizdent/core/widgets/snack_bars/my_snack_bar.dart';
 import 'package:quizdent/features/authentication/domain/utilities/signup_entity.dart';
-import 'package:quizdent/features/authentication/presentation/manager/auth_bloc.dart';
-import 'package:quizdent/features/authentication/presentation/manager/auth_event.dart';
-import 'package:quizdent/features/authentication/presentation/manager/auth_state.dart';
+import 'package:quizdent/features/authentication/presentation/manager/auth_bloc/auth_bloc.dart';
+import 'package:quizdent/features/authentication/presentation/manager/auth_bloc/auth_event.dart';
+import 'package:quizdent/features/authentication/presentation/manager/auth_bloc/auth_state.dart';
+import 'package:quizdent/features/authentication/presentation/widgets/my_tff_password.dart';
 
 class SignupBody extends StatelessWidget {
-  const SignupBody({super.key});
+  final void Function() authSwitcher;
+  const SignupBody({super.key, required this.authSwitcher});
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +36,12 @@ class SignupBody extends StatelessWidget {
 
     return  BlocListener<AuthBloc,AuthState>(
       listener: (context,state){
+        if(state is SignedUpAuthState) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            mySnackBar(text: StringsOfAuth.signupSuccessSnackBar, okBtn: true, context: context)
+          );
+          authSwitcher();
+        }
         if(state is FailureAuthState) ShowMyDialog.showErrorDialog(context: context, title: StringsOfErrors.signupAuthError, message: state.errorMessage);
       },
       child: Form(
@@ -49,9 +58,9 @@ class SignupBody extends StatelessWidget {
             const SizedBox(height: Sizes.lg,),
             MyTff(label: StringsOfAuth.emailWord,validator: Validation.validateEmail, controller: email),
             const SizedBox(height: Sizes.lg,),
-            MyTff(label: StringsOfAuth.passwordWord,validator: Validation.validatePassword, controller: password),
+            MyTffPassword(label: StringsOfAuth.passwordWord,validator: Validation.validatePassword, controller: password),
             const SizedBox(height: Sizes.lg,),
-            MyTff(label: StringsOfAuth.confirmPasswordWord,validator: (confirmPassValue)=>Validation.validateConfirmPassword(password: password.text,confirmPassword: confirmPassValue), controller: confirmPassword),
+            MyTffPassword(label: StringsOfAuth.confirmPasswordWord,validator: (confirmPassValue)=>Validation.validateConfirmPassword(password: password.text,confirmPassword: confirmPassValue), controller: confirmPassword),
             const SizedBox(height: Sizes.lg,),
             BlocBuilder<AuthBloc,AuthState>(
               builder: (context,state) {

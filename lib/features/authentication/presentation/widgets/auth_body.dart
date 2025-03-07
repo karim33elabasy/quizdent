@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizdent/core/constants/app_assets.dart';
 import 'package:quizdent/core/constants/sizes.dart';
 import 'package:quizdent/core/strings/strings_of_auth.dart';
 import 'package:quizdent/core/widgets/my_button.dart';
@@ -15,11 +16,22 @@ class AuthBody extends StatefulWidget {
 class _AuthBodyState extends State<AuthBody> {
   bool isLogin = true;
 
+  void authSwitch(){
+    setState(() {
+      isLogin = !isLogin;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(StringsOfAuth.authSubtitle,style: Theme.of(context).textTheme.headlineMedium),
+        // Text(
+        //     StringsOfAuth.authSubtitle,
+        //     style: Theme.of(context).textTheme.headlineMedium,
+        //   textAlign: TextAlign.center,
+        // ),
+        Image.asset(AppAssets.welcomePhoto),
         const SizedBox(height: Sizes.xl,),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -42,7 +54,7 @@ class _AuthBodyState extends State<AuthBody> {
           ],
         ),
         const SizedBox(height: Sizes.xl,),
-        isLogin? const LoginBody():const SignupBody()
+        isLogin? LoginBody(authSwitcher: authSwitch,):SignupBody(authSwitcher: authSwitch,)
 
       ],
     );

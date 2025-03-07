@@ -10,13 +10,13 @@ import 'package:quizdent/features/authentication/domain/utilities/login_entity.d
 import 'package:quizdent/features/authentication/domain/utilities/signup_entity.dart';
 
 class AuthRepoImpl extends AuthRepo {
-  final AuthRepoDatasource loginRepo;
-  AuthRepoImpl({required this.loginRepo});
+  final AuthRepoDatasource authRepo;
+  AuthRepoImpl({required this.authRepo});
 
   @override
   Future<Either<Failure, Unit>> login({required LoginEntity loginEntity}) async {
     try{
-      await loginRepo.login(loginModel: LoginMapper.toModel(loginEntity: loginEntity));
+      await authRepo.login(loginModel: LoginMapper.toModel(loginEntity: loginEntity));
       return const Right(unit);
     }catch(exception){
       return Left(
@@ -28,7 +28,7 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<Either<Failure, Unit>> signup({required SignupEntity signupEntity}) async{
     try{
-      await loginRepo.signup(signupModel: SignupMapper.toModel(signupEntity: signupEntity));
+      await authRepo.signup(signupModel: SignupMapper.toModel(signupEntity: signupEntity));
       return const Right(unit);
     }catch(exception){
       return Left(
@@ -40,7 +40,7 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<Either<Failure, Unit>> forgetPassword({required String email}) async{
     try{
-      await loginRepo.forgetPassword(email: email);
+      await authRepo.forgetPassword(email: email);
       return const Right(unit);
     }catch(exception){
       return Left(
