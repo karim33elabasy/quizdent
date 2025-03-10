@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:quizdent/core/constants/app_assets.dart';
+import 'package:quizdent/features/home/domain/entities/speaker_entity.dart';
 
 class SpeakerWidget extends StatelessWidget {
-  final String speakerName;
-  final String speakerRole;
+  final SpeakerEntity speakerEntity;
 
   const SpeakerWidget({
     super.key,
-    required this.speakerName,
-    required this.speakerRole,
+    required this.speakerEntity,
   });
 
   @override
@@ -31,6 +30,7 @@ class SpeakerWidget extends StatelessWidget {
         ],
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Speaker Image
           CircleAvatar(
@@ -45,14 +45,14 @@ class SpeakerWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  speakerName,
+                  speakerEntity.name,
                   style: theme.textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                     color: colorScheme.onSurface, // Adapts to light/dark mode
                   ),
                 ),
                 Text(
-                  speakerRole,
+                  speakerEntity.bio,
                   style: theme.textTheme.bodyMedium?.copyWith(
                     color: colorScheme.onSurfaceVariant, // Softer contrast
                   ),

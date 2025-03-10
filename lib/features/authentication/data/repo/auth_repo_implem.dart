@@ -5,19 +5,23 @@ import 'package:quizdent/core/strings/strings_of_error_codes.dart';
 import 'package:quizdent/features/authentication/data/datasources/auth_repo_datasource.dart';
 import 'package:quizdent/features/authentication/data/mappers/login_mapper.dart';
 import 'package:quizdent/features/authentication/data/mappers/signup_mapper.dart';
+import 'package:quizdent/features/authentication/data/mappers/user_mapper.dart';
+import 'package:quizdent/features/authentication/data/models/user_model.dart';
 import 'package:quizdent/features/authentication/domain/repo/auth_repo.dart';
 import 'package:quizdent/features/authentication/domain/utilities/login_entity.dart';
 import 'package:quizdent/features/authentication/domain/utilities/signup_entity.dart';
+import 'package:quizdent/features/authentication/domain/utilities/user_entity.dart';
 
 class AuthRepoImpl extends AuthRepo {
   final AuthRepoDatasource authRepo;
   AuthRepoImpl({required this.authRepo});
 
   @override
-  Future<Either<Failure, Unit>> login({required LoginEntity loginEntity}) async {
+  Future<Either<Failure, UserEntity>> login({required LoginEntity loginEntity}) async {
     try{
-      await authRepo.login(loginModel: LoginMapper.toModel(loginEntity: loginEntity));
-      return const Right(unit);
+      var userData = await authRepo.login(loginModel: LoginMapper.toModel(loginEntity: loginEntity));
+      var user = UserMapper.toEntity(userModel: UserModel.fromJson(userData));
+      return Right(user);
     }catch(exception){
       return Left(
         RepoImplementationFailure(repoType: StringsOfErrorCodes.repoType,errorMsg: exception.toString())

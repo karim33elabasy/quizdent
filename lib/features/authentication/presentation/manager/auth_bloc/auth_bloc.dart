@@ -20,7 +20,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     var result = await loginUseCase.call(params: event.loginEntity);
     result.fold(
         (error){emit(FailureAuthState(errorMessage: error.errorMessage));},
-        (success){emit(LoggedInAuthState());}
+        (userEntity){emit(LoggedInAuthState(userEntity: userEntity));}
     );
   }
 
@@ -34,7 +34,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   _forgetPassword(ForgetPasswordAuthEvent event, Emitter<AuthState> emit) async{
-    emit(LoadingAuthState());
+    emit(LoadingForgetPasswordAuthState());
     var result = await forgotPasswordUseCase.call(params: event.email);
     result.fold(
             (error){emit(FailureAuthState(errorMessage: error.errorMessage));},

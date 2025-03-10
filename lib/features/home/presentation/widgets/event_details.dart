@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:quizdent/features/home/domain/entities/event_entity.dart';
 import 'package:quizdent/features/home/presentation/widgets/event_time_bar.dart';
 
 class EventDetails extends StatelessWidget {
-  const EventDetails({super.key,});
+  final EventEntity eventEntity;
+  const EventDetails({super.key, required this.eventEntity,});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       spacing: 10,
       children: [
-        Text("title "*10,style: Theme.of(context).textTheme.displaySmall,),
+        Text(eventEntity.title,style: Theme.of(context).textTheme.displaySmall,maxLines: 4,overflow: TextOverflow.ellipsis,),
         EventTimeBar(dateTime: DateTime.now(),opositeAlign: true,),
-        Text("description "*20,style: Theme.of(context).textTheme.titleMedium,),
-        Divider(),
-        Text("body "*120,style: Theme.of(context).textTheme.titleLarge,),
+        Text(eventEntity.subtitle,style: Theme.of(context).textTheme.titleMedium,maxLines: 30,overflow: TextOverflow.ellipsis,),
+        const Divider(),
+        Text(eventEntity.description,style: Theme.of(context).textTheme.titleLarge,),
       ],
     );
   }

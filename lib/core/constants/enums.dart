@@ -1,0 +1,1 @@
+enum LangPref{en,ar}

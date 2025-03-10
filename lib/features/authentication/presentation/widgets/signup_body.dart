@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quizdent/core/constants/enums.dart';
 import 'package:quizdent/core/constants/sizes.dart';
 import 'package:quizdent/core/strings/strings_of_auth.dart';
 import 'package:quizdent/core/strings/strings_of_errors.dart';
@@ -26,10 +27,29 @@ class SignupBody extends StatelessWidget {
     TextEditingController email = TextEditingController();
     TextEditingController password = TextEditingController();
     TextEditingController confirmPassword = TextEditingController();
+    TextEditingController phoneNumber = TextEditingController();
 
     signUp() {
       if(sinUpFormKey.currentState?.validate() ?? false){
-        final signupEntity = SignupEntity(firstName: firstName.text, lastName: lastName.text, email: email.text, password: password.text,createdAt: DateTime.now());
+        final signupEntity = SignupEntity(
+          userId: 'none',
+          firstName: firstName.text,
+          lastName: lastName.text,
+          email: email.text,
+          password: password.text,
+          phoneNumber: phoneNumber.text,
+          profilePicture: 'none',
+          notificationPreferences: [],
+          userRole: 'user',
+          lastLoginDate: DateTime.now(),
+          badges: [],
+          location: 'none',
+          langPref: LangPref.en,
+          accountStatus: 'active',
+          createdAt: DateTime.now(),
+          favEvents: [],
+          attendedEvents: []
+        );
         context.read<AuthBloc>().add(SignupAuthEvent(signupEntity: signupEntity));
       }
     }
@@ -47,6 +67,7 @@ class SignupBody extends StatelessWidget {
       child: Form(
         key: sinUpFormKey,
         child: Column(
+          spacing: Sizes.lg,
           children: [
             Row(
               children: [
@@ -55,13 +76,10 @@ class SignupBody extends StatelessWidget {
                 Expanded(child: MyTff(label: StringsOfAuth.lastNameWord, validator: Validation.validateName, controller: lastName,)),
               ],
             ),
-            const SizedBox(height: Sizes.lg,),
             MyTff(label: StringsOfAuth.emailWord,validator: Validation.validateEmail, controller: email),
-            const SizedBox(height: Sizes.lg,),
+            MyTff(label: StringsOfAuth.phoneWord,validator: Validation.validateEgyptianPhoneNumber, controller: phoneNumber),
             MyTffPassword(label: StringsOfAuth.passwordWord,validator: Validation.validatePassword, controller: password),
-            const SizedBox(height: Sizes.lg,),
             MyTffPassword(label: StringsOfAuth.confirmPasswordWord,validator: (confirmPassValue)=>Validation.validateConfirmPassword(password: password.text,confirmPassword: confirmPassValue), controller: confirmPassword),
-            const SizedBox(height: Sizes.lg,),
             BlocBuilder<AuthBloc,AuthState>(
               builder: (context,state) {
                 return MyLoadingButton(
@@ -71,7 +89,6 @@ class SignupBody extends StatelessWidget {
                 );
               },
             ),
-            const SizedBox(height: Sizes.lg,),
           ],
         ),
       ),

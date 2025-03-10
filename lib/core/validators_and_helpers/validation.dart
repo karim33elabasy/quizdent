@@ -25,6 +25,10 @@ class Validation {
       return 'Password must be at least 6 characters long.';
     }
 
+    if (value.length > 99) {
+      return 'Password must be maximum 99 characters long.';
+    }
+
     // Check for uppercase letters
     if (!value.contains(RegExp(r'[A-Z]'))) {
       return 'Password must contain at least one uppercase letter.';
@@ -76,18 +80,17 @@ class Validation {
     return null; // Return null if validation passes
   }
 
-  static String? validatePhoneNumber(String? value) {
-    if (value == null || value.isEmpty) {
-      return 'Phone number is required.';
+  static String? validateEgyptianPhoneNumber(String? input) {
+    if (input == null || input.trim().isEmpty) {
+      return "Please enter a phone number.";
     }
 
-    // Regular expression for phone number validation (assuming a 10-digit US phone number format)
-    final phoneRegExp = RegExp(r'^\d{10}$');
-
-    if (!phoneRegExp.hasMatch(value)) {
-      return 'Invalid phone number format (10 digits required).';
+    final regex = RegExp(r'^(010|011|012|015)\d{8}$');
+    if (!regex.hasMatch(input)) {
+      return "Invalid phone number. It must be an 11-digit Egyptian number.";
     }
 
     return null;
   }
+
 }
