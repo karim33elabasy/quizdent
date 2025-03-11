@@ -8,7 +8,6 @@ import 'package:quizdent/core/widgets/no_data_widget.dart';
 import 'package:quizdent/features/home/presentation/managers/events_cubit/events_cubit.dart';
 import 'package:quizdent/features/home/presentation/managers/events_cubit/events_states.dart';
 import 'package:quizdent/features/home/presentation/widgets/event_widget.dart';
-import 'package:quizdent/features/home/presentation/widgets/tff_search_events.dart';
 
 class EventsListView extends StatelessWidget {
   const EventsListView({super.key});

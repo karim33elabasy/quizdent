@@ -40,7 +40,7 @@ class LoginBody extends StatelessWidget {
       listener: (context,state){
         if(state is FailureAuthState) ShowMyDialog.showErrorDialog(context: context, title: StringsOfErrors.loginAuthError, message: state.errorMessage);
         if(state is LoggedInAuthState) {
-          ScaffoldMessenger.of(context).showSnackBar(mySnackBar(text: "You have signed in successfully.", okBtn: true, context: context));
+          ScaffoldMessenger.of(context).showSnackBar(mySnackBar(text: StringsOfAuth.signupSuccessSnackBar, okBtn: true, context: context));
           Navigator.pushReplacementNamed(context, AppRoutes.kHomeScreen);}
         },
       child: Form(
@@ -64,7 +64,7 @@ class LoginBody extends StatelessWidget {
                 onPressed: (){
                   showDialog(context: context, builder: (context)=> const ResetPasswordDialog());
                 },
-                child:  Text("Forget Password",style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: AppColors.primary),)
+                child:  Text(StringsOfAuth.forgetPassWord,style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: AppColors.primary),)
               ),
             ),
             const SizedBox(height: Sizes.lg,),

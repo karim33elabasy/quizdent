@@ -129,6 +129,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.3"
+  easy_sidemenu:
+    dependency: "direct main"
+    description:
+      name: easy_sidemenu
+      sha256: "591cabac129822c0c89a7e16607a9a45ffec58f21fbac1228db93abbf7010eff"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.6.1"
   equatable:
     dependency: "direct main"
     description:
@@ -446,7 +454,7 @@ packages:
     source: hosted
     version: "0.0.8"
   shared_preferences:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: shared_preferences
       sha256: c59819dacc6669a1165d54d2735a9543f136f9b3cec94ca65cea6ab8dffc422e

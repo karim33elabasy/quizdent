@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizdent/core/constants/sizes.dart';
 
 class BigUserCard extends StatelessWidget {
   final Color? backgroundColor;
@@ -10,7 +11,7 @@ class BigUserCard extends StatelessWidget {
   final Widget? userMoreInfo;
   final Widget userProfilePic;
 
-  BigUserCard({
+  const BigUserCard({super.key,
     this.backgroundColor,
     this.settingColor,
     this.cardRadius = 30,
@@ -49,7 +50,7 @@ class BigUserCard extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(Sizes.sm),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: (cardActionWidget != null)

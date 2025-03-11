@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizdent/core/constants/sizes.dart';
 
 class SimpleUserCard extends StatelessWidget {
   final ImageProvider userProfilePic;
@@ -9,7 +10,7 @@ class SimpleUserCard extends StatelessWidget {
   final TextStyle? textStyle;
   final Icon? icon;
 
-  SimpleUserCard({
+  const SimpleUserCard({super.key,
     required this.userProfilePic,
     required this.userName,
     this.imageRadius = 10,
@@ -23,46 +24,44 @@ class SimpleUserCard extends StatelessWidget {
   Widget build(BuildContext context) {
     double mediaQueryHeight = MediaQuery.of(context).size.height;
     double mediaQueryWidth = MediaQuery.of(context).size.width;
-    return Container(
+    return SizedBox(
       width: mediaQueryWidth,
       height: mediaQueryHeight / 3,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            child: GestureDetector(
-              onTap: (onTap == null) ? () {} : onTap,
-              child: Stack(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(imageRadius!),
-                    child: Image(
-                      image: userProfilePic,
-                      fit: BoxFit.cover,
-                      height: mediaQueryHeight / 5,
-                      width: mediaQueryWidth / 2.6,
-                    ),
+          GestureDetector(
+            onTap: (onTap == null) ? () {} : onTap,
+            child: Stack(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(imageRadius!),
+                  child: Image(
+                    image: userProfilePic,
+                    fit: BoxFit.cover,
+                    height: mediaQueryHeight / 5,
+                    width: mediaQueryWidth / 2.6,
                   ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: (icon != null)
-                        ? icon!
-                        : Icon(
-                            Icons.camera,
-                            color: Colors.transparent,
-                          ),
-                  ),
-                ],
-              ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: (icon != null)
+                      ? icon!
+                      : const Icon(
+                          Icons.camera,
+                          color: Colors.transparent,
+                        ),
+                ),
+              ],
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 3),
+            margin: const EdgeInsets.only(top: Sizes.sm),
             child: Text(
               userName,
               style: (textStyle == null)
-                  ? TextStyle(fontWeight: FontWeight.bold, fontSize: 20)
+                  ? const TextStyle(fontWeight: FontWeight.bold, fontSize: 20)
                   : textStyle,
             ),
           ),

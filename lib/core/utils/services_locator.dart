@@ -12,10 +12,14 @@ import 'package:quizdent/features/home/domain/usecases/get_events_categories_use
 import 'package:quizdent/features/home/domain/usecases/get_events_use_case.dart';
 import 'package:quizdent/features/home/domain/usecases/get_speakers_use_case.dart';
 import 'package:quizdent/features/home/domain/usecases/search_events_use_case.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final GetIt getIt = GetIt.instance;
+setupLocator() async{
+  // Register SharedPref. instance
+  final sharedPreferences = await SharedPreferences.getInstance();
+  getIt.registerLazySingleton<SharedPreferences>(() => sharedPreferences);
 
-void setupLocator() {
   // Register Firebase Services
   getIt.registerLazySingleton<FirebaseAuth>(() => FirebaseAuth.instance);
   getIt.registerLazySingleton<FirebaseFirestore>(() => FirebaseFirestore.instance);

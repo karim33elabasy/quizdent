@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quizdent/core/constants/enums.dart';
+import 'package:quizdent/core/variables_and_enums/enums.dart';
 import 'package:quizdent/core/constants/sizes.dart';
 import 'package:quizdent/core/strings/strings_of_auth.dart';
 import 'package:quizdent/core/strings/strings_of_errors.dart';

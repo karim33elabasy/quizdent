@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quizdent/core/constants/app_colors.dart';
+import 'package:quizdent/core/constants/sizes.dart';
 
 class SmallUserCard extends StatelessWidget {
   final Color? cardColor;
@@ -9,7 +11,7 @@ class SmallUserCard extends StatelessWidget {
   final Widget? userMoreInfo;
   final ImageProvider userProfilePic;
 
-  SmallUserCard({
+  const SmallUserCard({super.key,
     required this.cardColor,
     this.cardRadius = 30,
     required this.userName,
@@ -27,7 +29,7 @@ class SmallUserCard extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: mediaQueryHeight / 6,
-        margin: EdgeInsets.only(bottom: 20),
+        margin: const EdgeInsets.only(bottom: Sizes.lg),
         decoration: BoxDecoration(
           color: cardColor,
           borderRadius:
@@ -50,7 +52,7 @@ class SmallUserCard extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.all(10),
+              margin: const EdgeInsets.all(Sizes.md),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -72,10 +74,10 @@ class SmallUserCard extends StatelessWidget {
                           children: [
                             Text(
                               userName!,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 26,
-                                color: Colors.white,
+                                color: AppColors.white,
                               ),
                             ),
                             if (userMoreInfo != null) ...[

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quizdent/core/widgets/dialogs/my_dialog.dart';
 
-abstract class ShowMyDialog{
+abstract class ShowMyDialog {
   static void showInfoDialog({
     required BuildContext context,
     required String title,
@@ -13,11 +13,26 @@ abstract class ShowMyDialog{
       context: context,
       builder: (context) => MyDialog(
         title: title,
-        message: message,
-        buttonText: buttonText,
-        onPressed: onPressed,
-        icon: Icons.info,
-        iconColor: Colors.blue,
+        content: Column(
+          children: [
+            const Icon(
+              Icons.info,
+              color: Colors.blue,
+              size: 48,
+            ),
+            const SizedBox(height: 16),
+            Text(
+              message,
+              style: Theme.of(context).textTheme.bodyMedium,
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: onPressed ?? () => Navigator.pop(context),
+              child: Text(buttonText),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -33,11 +48,26 @@ abstract class ShowMyDialog{
       context: context,
       builder: (context) => MyDialog(
         title: title,
-        message: message,
-        buttonText: buttonText,
-        onPressed: onPressed,
-        icon: Icons.check_circle,
-        iconColor: Colors.green,
+        content: Column(
+          children: [
+            const Icon(
+              Icons.check_circle,
+              color: Colors.green,
+              size: 48,
+            ),
+            const SizedBox(height: 16),
+            Text(
+              message,
+              style: Theme.of(context).textTheme.bodyMedium,
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: onPressed ?? () => Navigator.pop(context),
+              child: Text(buttonText),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -53,11 +83,26 @@ abstract class ShowMyDialog{
       context: context,
       builder: (context) => MyDialog(
         title: title,
-        message: message,
-        buttonText: buttonText,
-        onPressed: onPressed,
-        icon: Icons.error,
-        iconColor: Colors.red,
+        content: Column(
+          children: [
+            const Icon(
+              Icons.error,
+              color: Colors.red,
+              size: 48,
+            ),
+            const SizedBox(height: 16),
+            Text(
+              message,
+              style: Theme.of(context).textTheme.bodyMedium,
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: onPressed ?? () => Navigator.pop(context),
+              child: Text(buttonText),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -73,22 +118,34 @@ abstract class ShowMyDialog{
   }) {
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        title: Text(title),
-        content: Text(message),
-        actions: [
-          TextButton(
-            onPressed: onCancel ?? () => Navigator.pop(context),
-            child: Text(cancelText),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context); // Close the dialog
-              onConfirm(); // Execute the confirmation action
-            },
-            child: Text(confirmText),
-          ),
-        ],
+      builder: (context) => MyDialog(
+        title: title,
+        content: Column(
+          children: [
+            Text(
+              message,
+              style: Theme.of(context).textTheme.bodyMedium,
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                TextButton(
+                  onPressed: onCancel ?? () => Navigator.pop(context),
+                  child: Text(cancelText),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context); // Close the dialog
+                    onConfirm(); // Execute the confirmation action
+                  },
+                  child: Text(confirmText),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,4 +1,4 @@
-import 'package:quizdent/core/constants/enums.dart';
+import 'package:quizdent/core/variables_and_enums/enums.dart';
 import 'package:quizdent/features/authentication/domain/utilities/signup_entity.dart';
 
 class SignupModel extends SignupEntity {

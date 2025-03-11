@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizdent/core/constants/sizes.dart';
 import 'package:quizdent/features/profile/presentation/widgets/bob_items/settings_screen_utils.dart';
 
 import 'icon_style.dart';
@@ -16,8 +17,8 @@ class SettingsItem extends StatelessWidget {
   final int? subtitleMaxLine;
   final TextOverflow? overflow;
 
-  SettingsItem(
-      {required this.icons,
+  const SettingsItem(
+      {super.key, required this.icons,
       this.iconStyle,
       required this.title,
       this.titleStyle,
@@ -41,7 +42,7 @@ class SettingsItem extends StatelessWidget {
                   color: iconStyle!.backgroundColor,
                   borderRadius: BorderRadius.circular(iconStyle!.borderRadius!),
                 ),
-                padding: EdgeInsets.all(5),
+                padding: const EdgeInsets.all(Sizes.sm),
                 child: Icon(
                   icons,
                   size: SettingsScreenUtils.settingsGroupIconSize,
@@ -49,7 +50,7 @@ class SettingsItem extends StatelessWidget {
                 ),
               )
             : Padding(
-                padding: EdgeInsets.all(5),
+                padding: const EdgeInsets.all(Sizes.sm),
                 child: Icon(
                   icons,
                   size: SettingsScreenUtils.settingsGroupIconSize,
@@ -57,7 +58,7 @@ class SettingsItem extends StatelessWidget {
               ),
         title: Text(
           title,
-          style: titleStyle ?? TextStyle(fontWeight: FontWeight.bold),
+          style: titleStyle ?? const TextStyle(fontWeight: FontWeight.bold),
           maxLines: titleMaxLine,
           overflow: titleMaxLine != null ? overflow : null,
         ),
@@ -70,7 +71,7 @@ class SettingsItem extends StatelessWidget {
                     subtitleMaxLine != null ? TextOverflow.ellipsis : null,
               )
             : null,
-        trailing: (trailing != null) ? trailing : Icon(Icons.navigate_next),
+        trailing: (trailing != null) ? trailing : const Icon(Icons.navigate_next),
       ),
     );
   }

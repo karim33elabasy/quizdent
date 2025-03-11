@@ -1,4 +1,4 @@
-import 'package:quizdent/core/constants/enums.dart';
+import 'package:quizdent/core/variables_and_enums/enums.dart';
 
 class SignupEntity {
   final String userId;

@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:quizdent/core/constants/enums.dart';
+import 'package:quizdent/core/variables_and_enums/enums.dart';
 import 'package:quizdent/features/authentication/domain/utilities/user_entity.dart';
 
 class UserModel extends UserEntity {
@@ -42,6 +42,7 @@ class UserModel extends UserEntity {
     );
   }
 
+  @override
   Map<String, dynamic> toJson() {
     return {
       'userId': userId,
@@ -69,7 +70,7 @@ class UserModel extends UserEntity {
       email: 'johndoe@example.com',
       phoneNumber: '+1234567890',
       profilePicture: 'https://example.com/profile.jpg',
-      notificationPreferences: ['Event Reminders', 'Promotional Offers', 'New Features'],
+      notificationPreferences: const ['Event Reminders', 'Promotional Offers', 'New Features'],
       userRole: 'User',
       lastLoginDate: DateTime.now(),
       badges: const ['Early Bird', 'Frequent Attendee'],

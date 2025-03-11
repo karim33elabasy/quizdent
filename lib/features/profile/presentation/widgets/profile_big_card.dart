@@ -1,24 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:quizdent/core/constants/app_colors.dart';
 import 'package:quizdent/core/strings/screen_strings/strings_of_profile_screen.dart';
-import 'package:quizdent/features/authentication/domain/utilities/user_entity.dart';
+import 'package:quizdent/features/profile/presentation/manager/profile_bloc/profile_bloc.dart';
+import 'package:quizdent/features/profile/presentation/widgets/dialogs/avatar_generator_dialog.dart';
 import 'package:quizdent/features/profile/presentation/widgets/bob_items/babs_component_big_user_card.dart';
 import 'package:quizdent/features/profile/presentation/widgets/bob_items/babs_component_settings_item.dart';
 import 'package:quizdent/features/profile/presentation/widgets/bob_items/icon_style.dart';
 import 'package:random_avatar/random_avatar.dart';
 
-import 'avatar_dialog.dart';
+class ProfileBigCard extends StatefulWidget {
+  final ProfileBloc profileBloc;
+  const ProfileBigCard({super.key, required this.profileBloc});
 
-class ProfileBigCard extends StatelessWidget {
-  final UserEntity userEntity;
-  const ProfileBigCard({super.key, required this.userEntity});
+  @override
+  State<ProfileBigCard> createState() => _ProfileBigCardState();
+}
 
+class _ProfileBigCardState extends State<ProfileBigCard> {
   @override
   Widget build(BuildContext context) {
     return BigUserCard(
-      userName: "${userEntity.firstName} ${userEntity.lastName}",
+      userName: "${widget.profileBloc.currentUserDataToEdit['firstName']} ${widget.profileBloc.currentUserDataToEdit['lastName']}",
       backgroundColor: AppColors.primary,
-      userProfilePic: RandomAvatar('karim'),
+      userProfilePic: RandomAvatar(widget.profileBloc.currentUserDataToEdit['profilePicture']),
       cardActionWidget: SettingsItem(
         icons: Icons.edit,
         iconStyle: IconStyle(
@@ -29,15 +33,11 @@ class ProfileBigCard extends StatelessWidget {
         title: StringsOfProfileScreen.modifyWord,
         subtitle: StringsOfProfileScreen.changeAvatar,
         onTap: () async{
-          String? newAvatarSeed = await showDialog<String>(
+          showDialog<String>(
             context: context,
-            builder: (context) => AvatarGeneratorDialog(initialSeed: userEntity.profilePicture),
+            builder: (context) => AvatarGeneratorDialog(initialSeed: widget.profileBloc.currentUserDataToEdit['profilePicture']),
           );
 
-          if (newAvatarSeed != null) {
-            // Update the user's avatar seed
-            print('object');
-          }
         },
       ),
     );
