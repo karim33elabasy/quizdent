@@ -3,31 +3,28 @@ The Events and Activities System is a comprehensive mobile application designed 
 
 ## Screenshots
 
-### Home Screen
 <div>
   <img src="https://github.com/user-attachments/assets/d2970b6d-4372-42e7-8d92-b948c17a2798" alt="Home Screen 1" width="200" style="display: inline-block; margin: 10px;" />
   <img src="https://github.com/user-attachments/assets/ea5d8fdf-a44c-4b28-aac9-63de73fc8728" alt="Home Screen 2" width="200" style="display: inline-block; margin: 10px;" />
   <img src="https://github.com/user-attachments/assets/0ec19cf2-24d1-4b88-a403-46108c4a388c" alt="Home Screen 3" width="200" style="display: inline-block; margin: 10px;" />
 </div>
 
-### Event Details
 <div>
   <img src="https://github.com/user-attachments/assets/e7e9b277-9ea0-45ac-b0e1-cedc2152618a" alt="Event Details 1" width="200" style="display: inline-block; margin: 10px;" />
   <img src="https://github.com/user-attachments/assets/f723d71e-84b5-4e4e-aa8e-ed5452d1d54c" alt="Event Details 2" width="200" style="display: inline-block; margin: 10px;" />
 </div>
 
-### Profile Screen
 <div>
   <img src="https://github.com/user-attachments/assets/313128df-e7fd-4870-a563-8368f71c1e93" alt="Profile Screen 1" width="200" style="display: inline-block; margin: 10px;" />
   <img src="https://github.com/user-attachments/assets/3f506f0e-7497-4a76-9965-83ef46d96d5a" alt="Profile Screen 2" width="200" style="display: inline-block; margin: 10px;" />
 </div>
 
-### Support Screen
 <div>
   <img src="https://github.com/user-attachments/assets/5bedcf34-51a2-48b1-8780-cc968996bb94" alt="Support Screen 1" width="200" style="display: inline-block; margin: 10px;" />
   <img src="https://github.com/user-attachments/assets/ef385653-3a77-409a-b453-369fd0b4f18a" alt="Support Screen 2" width="200" style="display: inline-block; margin: 10px;" />
   <img src="https://github.com/user-attachments/assets/e98f49c7-5c29-4859-8560-824a0e06183a" alt="Support Screen 3" width="200" style="display: inline-block; margin: 10px;" />
 </div>
+
 ### Features
 The application includes the following key features:
 
