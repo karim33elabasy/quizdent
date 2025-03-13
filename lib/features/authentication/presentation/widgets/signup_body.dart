@@ -38,17 +38,12 @@ class SignupBody extends StatelessWidget {
           email: email.text,
           password: password.text,
           phoneNumber: phoneNumber.text,
-          profilePicture: 'none',
-          notificationPreferences: [],
+          profilePicture: 'random',
           userRole: 'user',
           lastLoginDate: DateTime.now(),
-          badges: [],
           location: 'none',
           langPref: LangPref.en,
-          accountStatus: 'active',
           createdAt: DateTime.now(),
-          favEvents: [],
-          attendedEvents: []
         );
         context.read<AuthBloc>().add(SignupAuthEvent(signupEntity: signupEntity));
       }

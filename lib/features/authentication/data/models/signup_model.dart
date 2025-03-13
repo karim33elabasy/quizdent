@@ -49,12 +49,13 @@ class SignupModel extends SignupEntity {
   }
 
   /// ✅ Convert `SignupModel` to JSON
+  @override
   Map<String, dynamic> toJson() {
     return {
       'firstName': firstName,
       'lastName': lastName,
       'email': email,
-      'password': password,
+      // 'password': password,
       'phoneNumber': phoneNumber,
       'profilePicture': profilePicture,
       'notificationPreferences': notificationPreferences,

@@ -1,1 +1,1 @@
-enum LangPref{en,ar}
+enum LangPref{en}

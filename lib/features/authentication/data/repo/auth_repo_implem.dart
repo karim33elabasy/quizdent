@@ -19,9 +19,9 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<Either<Failure, UserEntity>> login({required LoginEntity loginEntity}) async {
     try{
-      var userData = await authRepo.login(loginModel: LoginMapper.toModel(loginEntity: loginEntity));
-      var user = UserMapper.toEntity(userModel: UserModel.fromJson(userData));
-      return Right(user);
+      UserModel userModel = await authRepo.login(loginModel: LoginMapper.toModel(loginEntity: loginEntity));
+      UserEntity userEntity = UserMapper.toEntity(userModel: userModel);
+      return Right(userEntity);
     }catch(exception){
       return Left(
         RepoImplementationFailure(repoType: StringsOfErrorCodes.repoType,errorMsg: exception.toString())

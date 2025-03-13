@@ -9,7 +9,6 @@ import 'package:quizdent/core/validators_and_helpers/validation.dart';
 import 'package:quizdent/core/widgets/dialogs/show_my_dialog.dart';
 import 'package:quizdent/core/widgets/my_loading_button.dart';
 import 'package:quizdent/core/widgets/my_tff.dart';
-import 'package:quizdent/core/widgets/snack_bars/my_snack_bar.dart';
 import 'package:quizdent/features/authentication/domain/utilities/login_entity.dart';
 import 'package:quizdent/features/authentication/presentation/manager/auth_bloc/auth_bloc.dart';
 import 'package:quizdent/features/authentication/presentation/manager/auth_bloc/auth_event.dart';
@@ -40,7 +39,6 @@ class LoginBody extends StatelessWidget {
       listener: (context,state){
         if(state is FailureAuthState) ShowMyDialog.showErrorDialog(context: context, title: StringsOfErrors.loginAuthError, message: state.errorMessage);
         if(state is LoggedInAuthState) {
-          ScaffoldMessenger.of(context).showSnackBar(mySnackBar(text: StringsOfAuth.signupSuccessSnackBar, okBtn: true, context: context));
           Navigator.pushReplacementNamed(context, AppRoutes.kHomeScreen);}
         },
       child: Form(

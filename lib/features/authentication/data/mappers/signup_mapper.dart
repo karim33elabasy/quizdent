@@ -13,15 +13,15 @@ class SignupMapper {
       phoneNumber: signupEntity.phoneNumber,
       profilePicture: signupEntity.profilePicture,
       notificationPreferences: signupEntity.notificationPreferences,
+      badges: signupEntity.badges,
+      attendedEvents: signupEntity.attendedEvents,
+      favEvents: signupEntity.favEvents,
       userRole: signupEntity.userRole,
       lastLoginDate: signupEntity.lastLoginDate,
-      badges: signupEntity.badges,
       location: signupEntity.location,
       langPref: signupEntity.langPref,
       accountStatus: signupEntity.accountStatus,
       createdAt: signupEntity.createdAt,
-      favEvents: signupEntity.favEvents,
-      attendedEvents: signupEntity.attendedEvents,
     );
   }
 
@@ -36,15 +36,15 @@ class SignupMapper {
       phoneNumber: signupModel.phoneNumber,
       profilePicture: signupModel.profilePicture,
       notificationPreferences: signupModel.notificationPreferences,
+      badges: signupModel.badges,
+      attendedEvents: signupModel.attendedEvents,
+      favEvents: signupModel.favEvents,
       userRole: signupModel.userRole,
       lastLoginDate: signupModel.lastLoginDate,
-      badges: signupModel.badges,
       location: signupModel.location,
       langPref: signupModel.langPref,
       accountStatus: signupModel.accountStatus,
       createdAt: signupModel.createdAt,
-      attendedEvents: signupModel.attendedEvents,
-      favEvents: signupModel.favEvents,
     );
   }
 }

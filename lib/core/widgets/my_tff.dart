@@ -6,6 +6,8 @@ class MyTff extends StatelessWidget {
   final String? Function(String?)? validator;
   final bool? obscureText;
   final Widget? suffixIcon;
+  final int? maxLines;
+  final int? minLines;
 
   const MyTff({
     super.key,
@@ -14,6 +16,8 @@ class MyTff extends StatelessWidget {
     required this.controller,
     this.obscureText,
     this.suffixIcon,
+    this.maxLines,
+    this.minLines,
   });
 
   @override
@@ -24,14 +28,14 @@ class MyTff extends StatelessWidget {
         obscureText: obscureText ?? false,
         controller: controller,
         validator: validator,
+        maxLines: maxLines,
+        minLines: minLines,
         decoration: InputDecoration(
           label: Text(label, style: Theme.of(context).textTheme.bodyLarge),
           suffixIcon: suffixIcon,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),
-          filled: true,
-          fillColor: Colors.grey[200],
         ),
       ),
     );

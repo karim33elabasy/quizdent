@@ -9,9 +9,11 @@ class UserEntity extends Equatable {
   final String phoneNumber;
   final String profilePicture;
   final List<String> notificationPreferences;
+  final List<String> badges;
+  final List<String> attendedEvents;
+  final List<String> favEvents;
   final String userRole;
   final DateTime lastLoginDate;
-  final List<String> badges;
   final String location;
   final LangPref langPref;
   final String accountStatus;
@@ -25,9 +27,11 @@ class UserEntity extends Equatable {
     required this.phoneNumber,
     required this.profilePicture,
     required this.notificationPreferences,
+    required this.badges,
+    required this.attendedEvents,
+    required this.favEvents,
     required this.userRole,
     required this.lastLoginDate,
-    required this.badges,
     required this.location,
     required this.langPref,
     required this.accountStatus,
@@ -44,9 +48,11 @@ class UserEntity extends Equatable {
       'phoneNumber': phoneNumber,
       'profilePicture': profilePicture,
       'notificationPreferences': notificationPreferences,
+      'badges': badges,
+      'attendedEvents': attendedEvents,
+      'favEvents': favEvents,
       'userRole': userRole,
       'lastLoginDate': lastLoginDate.toIso8601String(),
-      'badges': badges,
       'location': location,
       'langPref': langPref.toString().split('.').last, // Convert enum to string
       'accountStatus': accountStatus,
@@ -64,9 +70,11 @@ class UserEntity extends Equatable {
       phoneNumber: json['phoneNumber'] as String,
       profilePicture: json['profilePicture'] as String,
       notificationPreferences: List<String>.from(json['notificationPreferences'] ?? <String>[]),
+      badges: List<String>.from(json['badges'] ?? <String>[]),
+      attendedEvents: List<String>.from(json['attendedEvents'] ?? <String>[]),
+      favEvents: List<String>.from(json['favEvents'] ?? <String>[]),
       userRole: json['userRole'] as String,
       lastLoginDate: DateTime.parse(json['lastLoginDate'] as String),
-      badges: List<String>.from(json['badges'] ?? <String>[]),
       location: json['location'] as String,
       langPref: LangPref.values.firstWhere(
             (e) => e.toString().split('.').last == json['langPref'],
@@ -85,9 +93,11 @@ class UserEntity extends Equatable {
     String? phoneNumber,
     String? profilePicture,
     List<String>? notificationPreferences,
+    List<String>? badges,
+    List<String>? attendedEvents,
+    List<String>? favEvents,
     String? userRole,
     DateTime? lastLoginDate,
-    List<String>? badges,
     String? location,
     LangPref? langPref,
     String? accountStatus,
@@ -101,9 +111,11 @@ class UserEntity extends Equatable {
       phoneNumber: phoneNumber ?? this.phoneNumber,
       profilePicture: profilePicture ?? this.profilePicture,
       notificationPreferences: notificationPreferences ?? this.notificationPreferences,
+      badges: badges ?? this.badges,
+      attendedEvents: attendedEvents ?? this.attendedEvents,
+      favEvents: favEvents ?? this.favEvents,
       userRole: userRole ?? this.userRole,
       lastLoginDate: lastLoginDate ?? this.lastLoginDate,
-      badges: badges ?? this.badges,
       location: location ?? this.location,
       langPref: langPref ?? this.langPref,
       accountStatus: accountStatus ?? this.accountStatus,
@@ -120,9 +132,11 @@ class UserEntity extends Equatable {
     phoneNumber,
     profilePicture,
     notificationPreferences,
+    badges,
+    attendedEvents,
+    favEvents,
     userRole,
     lastLoginDate,
-    badges,
     location,
     langPref,
     accountStatus,

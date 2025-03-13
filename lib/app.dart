@@ -6,6 +6,7 @@ import 'package:quizdent/core/variables_and_enums/shared_pref_variables.dart';
 import 'package:quizdent/features/authentication/presentation/manager/auth_bloc/auth_bloc.dart';
 import 'package:device_preview_plus/device_preview_plus.dart';
 import 'package:quizdent/features/home/presentation/managers/events_categories_cubit/events_categories_cubit.dart';
+import 'package:quizdent/features/home/presentation/managers/manage_events/manage_events_cubit.dart';
 import 'package:quizdent/features/home/presentation/managers/speakers_cubit/speakers_cubit.dart';
 import 'package:quizdent/features/profile/presentation/manager/profile_bloc/profile_bloc.dart';
 import 'package:quizdent/features/profile/presentation/manager/profile_bloc/profile_states.dart';
@@ -23,18 +24,20 @@ class App extends StatelessWidget {
         BlocProvider(create: (context)=> EventsCubit(getEventsUseCase: getIt(), searchEventsUseCase: getIt())..getEvents(),),
         BlocProvider(create: (context)=> EventsCategoriesCubit(getEventsCategoriesUseCase: getIt())..getEventsCategories(),),
         BlocProvider(create: (context)=> SpeakersCubit(getSpeakersUseCase: getIt())..getSpeakers(),),
-        BlocProvider(create: (context)=> ProfileBloc())
+        BlocProvider(create: (context)=> ProfileBloc(updateUserDataUseCase: getIt(),authBloc: context.read<AuthBloc>())),
+        BlocProvider(create: (context)=> ManageEventsCubit(updateUserDataUseCase: getIt())),
       ],
       child: BlocBuilder<ProfileBloc,ProfileStates>(
   builder: (context, state) {
     return MaterialApp(
+      navigatorKey: navigatorKey,
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       themeMode: SharedPrefVariables.isDarkMode? ThemeMode.dark : ThemeMode.system,
       theme: MyTheme.lightTheme,
       darkTheme: MyTheme.darkTheme,
-      initialRoute: AppRoutes.kHomeScreen,
+      initialRoute: AppRoutes.kAuthScreen,
       onGenerateRoute: AppRoutes.onGenerateRoute,
       );
   },
@@ -42,3 +45,4 @@ class App extends StatelessWidget {
     );
   }
 }
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();

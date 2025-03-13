@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:quizdent/features/authentication/domain/utilities/login_entity.dart';
 import 'package:quizdent/features/authentication/domain/utilities/signup_entity.dart';
+import 'package:quizdent/features/authentication/domain/utilities/user_entity.dart';
 
 abstract class AuthEvent extends Equatable{
   const AuthEvent();
@@ -21,4 +22,9 @@ class SignupAuthEvent extends AuthEvent{
 class ForgetPasswordAuthEvent extends AuthEvent{
   final String email;
   const ForgetPasswordAuthEvent({required this.email});
+}
+
+class UpdateUserEntity extends AuthEvent{
+  final UserEntity userEntity;
+  const UpdateUserEntity({required this.userEntity});
 }

@@ -15,3 +15,5 @@ class ProfileStatesFailure extends ProfileStates{
 }
 
 class ProfileStatesUpdateSettingsUI extends ProfileStates{}
+
+class ProfileStatesSavedUserInfoSuccess extends ProfileStates{}

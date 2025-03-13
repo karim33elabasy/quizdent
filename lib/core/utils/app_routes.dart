@@ -7,12 +7,17 @@ import 'package:quizdent/features/home/presentation/event_screen.dart';
 import 'package:quizdent/features/home/presentation/home_screen.dart';
 import 'package:quizdent/features/home/domain/entities/event_entity.dart';
 import 'package:quizdent/features/profile/presentation/profile_screen.dart';
+import 'package:quizdent/features/support/presentation/views/contact_us_screen.dart';
+import 'package:quizdent/features/support/presentation/views/main_support_screen.dart';
 
 abstract class AppRoutes {
   static const kAuthScreen = 'kAuthScreen';
   static const kHomeScreen = 'kHomeScreen';
   static const kEventScreen = 'kEventScreen';
   static const kProfileScreen = 'kProfileScreen';
+  static const kNotificationsScreen = 'kNotificationsScreen';
+  static const kMainSupportScreen = 'kMainSupportScreen';
+  static const kContactUsScreen = 'kContactUsScreen';
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -43,6 +48,13 @@ abstract class AppRoutes {
           );
         }
         return MaterialPageRoute(builder: (_) => ProfileScreen(userEntity: userEntity));
+
+
+        case kMainSupportScreen:
+        return MaterialPageRoute(builder: (_) => const MainSupportScreen());
+
+        case kContactUsScreen:
+        return MaterialPageRoute(builder: (_) => const ContactUsScreen());
 
       default:
         return MaterialPageRoute(

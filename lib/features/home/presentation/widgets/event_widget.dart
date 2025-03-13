@@ -27,7 +27,6 @@ class EventWidget extends StatelessWidget {
         child: Column(
           children: [
             Hero(
-              //todo: add event id existed in the event entity to the hero tag
               tag: 'event_photo_${eventEntity.id}',
               child: Container(
                 height: widgetHeight*0.5,
@@ -78,7 +77,7 @@ class EventWidget extends StatelessWidget {
                         Text(eventEntity.title, style: Theme.of(context).textTheme.titleLarge?.copyWith(color: Colors.black,fontSize: 18, overflow: TextOverflow.ellipsis),maxLines: 2,),
                         Text(eventEntity.subtitle, style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.black54,fontSize: 15, overflow: TextOverflow.ellipsis),maxLines: 1,),
                         const Spacer(),
-                        EventTimeBar(dateTime: eventEntity.date)
+                        EventTimeBar(dateTime: eventEntity.date,fontColor: AppColors.black,)
 
                       ],
                     ),

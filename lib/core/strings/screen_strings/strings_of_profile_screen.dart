@@ -15,4 +15,8 @@ abstract class StringsOfProfileScreen {
   static const String generateAvatar = 'Generate Your Avatar';
   static const String notificationsSettings = 'Notifications Settings';
   static const String notificationsPrefSubtitle = 'Select favorable notifications types';
+  static const String infoSavedSuccess = "Your Info Saved Successfully";
+  static const String exitTitle = 'Logout Confirmation';
+  static const String exitBody = 'Are you sure you want to logout?';
+  static const String signOutWord = 'Sign Out';
 }

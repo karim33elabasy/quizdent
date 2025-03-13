@@ -54,7 +54,7 @@ class ChangeLanguageDialogState extends State<ChangeLanguageDialog> {
           const SizedBox(height: Sizes.lg,),
           MyButton(
               onPressed: (){
-
+                Navigator.pop(context);
               },
               title: StringsOfProfileScreen.saveWord,
               isBlue: true

@@ -14,49 +14,50 @@ class MyDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Dialog(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
       ),
       elevation: 10,
       child: ConstrainedBox(
-        constraints: const BoxConstraints(
-          maxWidth: 310, // Set a maximum width for the dialog
-          maxHeight: 715, // Set a maximum height for the dialog
+        constraints: BoxConstraints(
+          maxWidth: screenWidth * 0.9,
+          maxHeight: screenHeight * 0.8,
         ),
         child: Padding(
           padding: const EdgeInsets.all(Sizes.md),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min, // Use min to fit the content
-              children: [
-                // Close Button
-                Align(
-                  alignment: Alignment.topRight,
-                  child: IconButton(
-                    icon: const Icon(Icons.close, color: Colors.grey),
-                    onPressed: () => Navigator.pop(context),
-                  ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min, // Use min to fit the content
+            children: [
+              // Close Button
+              Align(
+                alignment: Alignment.topRight,
+                child: IconButton(
+                  icon: const Icon(Icons.close, color: Colors.grey),
+                  onPressed: () => Navigator.pop(context),
                 ),
-                // Title
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.primary,
-                  ),
+              ),
+              // Title
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.primary,
                 ),
-                const SizedBox(height: 16),
-                // Content
-                Flexible(
-                  child: SingleChildScrollView(
-                    child: content,
-                  ),
+              ),
+              const SizedBox(height: 16),
+              // Content
+              Flexible(
+                child: SingleChildScrollView(
+                  child: content,
                 ),
-                const SizedBox(height: 20),
-              ],
-            ),
+              ),
+              const SizedBox(height: 20),
+            ],
           ),
         ),
       ),

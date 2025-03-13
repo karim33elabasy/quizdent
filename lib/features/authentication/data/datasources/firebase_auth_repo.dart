@@ -8,6 +8,7 @@ import 'package:quizdent/core/strings/strings_of_firebase.dart';
 import 'package:quizdent/features/authentication/data/datasources/auth_repo_datasource.dart';
 import 'package:quizdent/features/authentication/data/models/login_model.dart';
 import 'package:quizdent/features/authentication/data/models/signup_model.dart';
+import 'package:quizdent/features/authentication/data/models/user_model.dart';
 
 class FirebaseAuthRepo extends AuthRepoDatasource {
   final FirebaseAuth firebaseAuth;
@@ -16,7 +17,7 @@ class FirebaseAuthRepo extends AuthRepoDatasource {
   FirebaseAuthRepo({required this.firebaseAuth, required this.firestore});
 
   @override
-  Future<Map<String, dynamic>> login({required LoginModel loginModel}) async {
+  Future<UserModel> login({required LoginModel loginModel}) async {
     try {
       await firebaseAuth.signInWithEmailAndPassword(
           email: loginModel.email, password: loginModel.password);
@@ -72,11 +73,11 @@ class FirebaseAuthRepo extends AuthRepoDatasource {
     }
   }
 
-  Future<Map<String, dynamic>> _getUserInfo({required String userId}) async {
+  Future<UserModel> _getUserInfo({required String userId}) async {
     try {
       var result = await firestore.collection(
           StringsOfFirebase.usersCollection).doc(userId).get();
-      return result.data()!;
+      return UserModel.fromJson(json: result.data()!, id: firebaseAuth.currentUser!.uid);
     } on FirestoreFailure catch (firestoreException) {
       throw FirestoreFailure(rawErrorMessage: firestoreException.errorMessage);
     } catch (e) {

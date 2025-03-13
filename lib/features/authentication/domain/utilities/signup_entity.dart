@@ -1,41 +1,25 @@
-import 'package:quizdent/core/variables_and_enums/enums.dart';
+import 'package:quizdent/features/authentication/domain/utilities/user_entity.dart';
 
-class SignupEntity {
-  final String userId;
-  final String firstName;
-  final String lastName;
-  final String email;
+class SignupEntity extends UserEntity {
   final String password;
-  final String phoneNumber;
-  final String profilePicture;
-  final List<String> notificationPreferences;
-  final String userRole;
-  final DateTime lastLoginDate;
-  final List<String> badges;
-  final String location;
-  final LangPref langPref;
-  final String accountStatus;
-  final DateTime createdAt;
-  final List attendedEvents;
-  final List favEvents;
 
   const SignupEntity({
-    required this.userId,
-    required this.firstName,
-    required this.lastName,
-    required this.email,
+    super.userId = 'none',
+    required super.firstName,
+    required super.lastName,
+    required super.email,
+    required super.phoneNumber,
     required this.password,
-    required this.phoneNumber,
-    required this.profilePicture,
-    required this.notificationPreferences,
-    required this.userRole,
-    required this.lastLoginDate,
-    required this.badges,
-    required this.location,
-    required this.langPref,
-    required this.accountStatus,
-    required this.createdAt,
-    required this.attendedEvents,
-    required this.favEvents
+    super.profilePicture = 'random',
+    super.notificationPreferences = const [],
+    super.badges = const [],
+    super.attendedEvents = const [],
+    super.favEvents = const [],
+    required super.userRole,
+    required super.lastLoginDate,
+    super.location = 'none',
+    required super.langPref,
+    super.accountStatus = 'active',
+    required super.createdAt,
   });
 }

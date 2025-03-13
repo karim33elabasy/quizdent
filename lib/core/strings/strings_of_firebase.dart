@@ -4,4 +4,5 @@ class StringsOfFirebase{
   static const String categoryIdColumnInEventsCollection = 'categoryId';
   static const String eventsCategoriesCollection = 'events_categories';
   static const String speakersCollection = 'speakers';
+  static const String userMsgCollection = 'user_messages';
 }

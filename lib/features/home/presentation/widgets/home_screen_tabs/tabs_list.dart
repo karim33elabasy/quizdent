@@ -1,8 +1,8 @@
 import 'package:quizdent/core/strings/screen_strings/strings_of_home.dart';
 import 'package:quizdent/features/home/presentation/managers/events_cubit/events_cubit.dart';
 import 'package:quizdent/features/home/presentation/presentation_models/home_tab_model.dart';
-import 'package:quizdent/features/home/presentation/widgets/home_screen_tabs/fav_tab.dart';
-import 'package:quizdent/features/home/presentation/widgets/home_screen_tabs/groups_tab.dart';
+import 'package:quizdent/features/home/presentation/widgets/home_screen_tabs/calendar_tab.dart';
+import 'package:quizdent/features/home/presentation/widgets/home_screen_tabs/timeline_tab.dart';
 import 'package:quizdent/features/home/presentation/widgets/home_screen_tabs/main_tab.dart';
 
 List<HomeTabModel> homeTabs ({required EventsCubit eventsCubit}){
@@ -12,12 +12,12 @@ List<HomeTabModel> homeTabs ({required EventsCubit eventsCubit}){
         body: MainTab(eventsCubit: eventsCubit,)
     ),
     HomeTabModel(
-        title: StringsOfHome.favTab,
-        body: FavTab(eventsCubit: eventsCubit,)
+        title: StringsOfHome.calendarTab,
+        body: CalendarTab(eventsCubit: eventsCubit,)
     ),
     HomeTabModel(
-        title: StringsOfHome.groupsTab,
-        body: GroupsTab(eventsCubit: eventsCubit,)
+        title: StringsOfHome.timelineTab,
+        body: TimelineTab(eventsCubit: eventsCubit,)
     ),
   ];
 }

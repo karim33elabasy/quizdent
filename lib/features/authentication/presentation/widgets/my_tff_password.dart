@@ -16,6 +16,8 @@ class _MyTffPasswordState extends State<MyTffPassword> {
   @override
   Widget build(BuildContext context) {
     return MyTff(
+      minLines: 1,
+      maxLines: 1,
       label: widget.label,
       controller: widget.controller,
       obscureText: obscureText,
