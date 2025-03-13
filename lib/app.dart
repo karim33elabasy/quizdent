@@ -12,6 +12,7 @@ import 'package:quizdent/features/profile/presentation/manager/profile_bloc/prof
 import 'package:quizdent/features/profile/presentation/manager/profile_bloc/profile_states.dart';
 import 'core/themes/my_theme.dart';
 import 'features/home/presentation/managers/events_cubit/events_cubit.dart';
+import 'features/support/presentation/manager/support_cubit.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -26,6 +27,7 @@ class App extends StatelessWidget {
         BlocProvider(create: (context)=> SpeakersCubit(getSpeakersUseCase: getIt())..getSpeakers(),),
         BlocProvider(create: (context)=> ProfileBloc(updateUserDataUseCase: getIt(),authBloc: context.read<AuthBloc>())),
         BlocProvider(create: (context)=> ManageEventsCubit(updateUserDataUseCase: getIt())),
+        BlocProvider(create: (context)=> SupportCubit(submitUserMsgUseCase: getIt(),authBloc: context.read<AuthBloc>())),
       ],
       child: BlocBuilder<ProfileBloc,ProfileStates>(
   builder: (context, state) {
