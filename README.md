@@ -2,7 +2,25 @@
 The Events and Activities System is a comprehensive mobile application designed to help organizations and companies communicate effectively with their audience. The system keeps users informed and updated about all events, programs, and sessions, providing detailed information through notifications and calendars. The application is built with a focus on user-friendliness, real-time updates, and interactive features to enhance user engagement.
 
 ### Screenshots
+![Screenshot_20250313-182051](https://github.com/user-attachments/assets/d2970b6d-4372-42e7-8d92-b948c17a2798)
 
+![Screenshot_20250313-182138](https://github.com/user-attachments/assets/ea5d8fdf-a44c-4b28-aac9-63de73fc8728)
+
+![Screenshot_20250313-183257](https://github.com/user-attachments/assets/0ec19cf2-24d1-4b88-a403-46108c4a388c)
+
+![Screenshot_20250313-183003](https://github.com/user-attachments/assets/e7e9b277-9ea0-45ac-b0e1-cedc2152618a)
+
+![Screenshot_20250313-182956](https://github.com/user-attachments/assets/f723d71e-84b5-4e4e-aa8e-ed5452d1d54c)
+
+![Screenshot_20250313-182347](https://github.com/user-attachments/assets/313128df-e7fd-4870-a563-8368f71c1e93)
+
+![Screenshot_20250313-182331](https://github.com/user-attachments/assets/3f506f0e-7497-4a76-9965-83ef46d96d5a)
+
+![Screenshot_20250313-182213](https://github.com/user-attachments/assets/5bedcf34-51a2-48b1-8780-cc968996bb94)
+
+![Screenshot_20250313-182206](https://github.com/user-attachments/assets/ef385653-3a77-409a-b453-369fd0b4f18a)
+
+![Screenshot_20250313-182201](https://github.com/user-attachments/assets/e98f49c7-5c29-4859-8560-824a0e06183a)
 
 ### Features
 The application includes the following key features:
@@ -84,7 +102,7 @@ The project was completed in 5-7 days, including development, testing, and docum
 
 Code Structure
 The application is organized into the following key components:
-
+```
 ├── core
 │   ├── constants
 │   │   ├── app_assets.dart
@@ -328,7 +346,7 @@ The application is organized into the following key components:
 ├── app.dart
 ├── firebase_options.dart
 ├── main.dart
-
+```
 ### Core Features and Implementation Example
 
 ## Authentication
