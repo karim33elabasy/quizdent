@@ -1,4 +1,4 @@
-### Overview
+# Overview
 The Events and Activities System is a comprehensive mobile application designed to help organizations and companies communicate effectively with their audience. The system keeps users informed and updated about all events, programs, and sessions, providing detailed information through notifications and calendars. The application is built with a focus on user-friendliness, real-time updates, and interactive features to enhance user engagement.
 
 ## Screenshots
@@ -25,16 +25,19 @@ The Events and Activities System is a comprehensive mobile application designed 
   <img src="https://github.com/user-attachments/assets/e98f49c7-5c29-4859-8560-824a0e06183a" alt="Support Screen 3" width="200" style="display: inline-block; margin: 10px;" />
 </div>
 
-### Features
+## Demo Video
+https://files.fm/u/a2qgqd373c
+
+## Features
 The application includes the following key features:
 
-# Authentication
+### Authentication
   Secure user registration and login with firebase authenticaion.
   Validation of user inputs before submitting requests to firebase.
   Stylish loading button UI till receiving the response.
   Safe error handling that could be happen due to server,internet or internal errors.  
 
-# Events
+### Events
 - Home Screen
   Main Tab: Displays all events with filters for categories and search functionality.
 
@@ -47,7 +50,7 @@ The application includes the following key features:
   Easy to enroll button with loading animation.
   Attractive UI to show event details.
   
-# Support
+### Support
 - Support Screen
   Fast Whatsapp launcher to open the support chat number.
   Fast Email launcher to send user inquiries with email title auto filled.
@@ -59,20 +62,20 @@ The application includes the following key features:
   Proper error handling to enhance user experience.
   Loading Button.
   
-# Profile 
+### Profile 
   Generate user avatars (billions of avatars) which will enhance user experience.
   Control Light/Dark mode which could be auto or activating the dark mode.
   Change user personal information easily.
   Change App language (easy localization scalability).
   Control the type of notifications.
   
-# Notifications
+### Notifications
   Delivers real-time notifications about events and activities, both in the app’s foreground and background.
   Notifications still work even after application not running.
   Customizable notification settings to allow users to manage their preferences.
   
 
-### Technology Stack
+## Technology Stack
 Mobile Platform: Android and iOS.
 
 Frontend: Flutter for cross-platform mobile development.
@@ -83,12 +86,12 @@ Authentication: Firebase Authentication for secure user management.
 
 Notifications: Firebase Cloud Messaging (FCM) for push notifications.
 
-### System Requirements
+## System Requirements
 - Hardware: GPS-enabled smartphones running Android 6.0+ or iOS 11+.
 
 - Backend Services: Firebase for data handling, authentication, and notifications.
 
-### Environment Setup
+## Environment Setup
 - Development Environment
   - IDE: Android Studio or VS Code for Flutter development, Xcode for iOS.
 
@@ -350,10 +353,10 @@ The application is organized into the following key components:
 ├── firebase_options.dart
 ├── main.dart
 ```
-### Core Features and Implementation Example
+# Core Features and Implementation Example
 
 ## Authentication
-#Presentation Layer
+### Presentation Layer
 - Widgets:
 
 auth_screen.dart: Main authentication screen.
@@ -370,7 +373,7 @@ Events: auth_event.dart defines actions like LoginEvent and SignupEvent.
 
 States: auth_state.dart defines states like AuthLoading, AuthSuccess, and AuthFailure.
 
-# Domain Layer
+### Domain Layer
 - Entities:
 
 user_entity.dart: Represents the user entity with properties like id, email, and firstName.
@@ -387,7 +390,7 @@ forget_password_usecase.dart: Handles password reset logic.
 
 auth_repo.dart: Abstract class defining the contract for authentication operations.
 
-# Data Layer
+### Data Layer
 - Repositories:
 
 auth_repo_implem.dart: Implements auth_repo.dart using Firebase Authentication.
