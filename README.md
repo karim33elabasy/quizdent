@@ -28,6 +28,16 @@ The Events and Activities System is a comprehensive mobile application designed 
 ## Demo Video
 https://files.fm/u/a2qgqd373c
 
+## System Diagrams
+
+![image](https://github.com/user-attachments/assets/b4a2d07a-c7a1-487a-aecd-a1a406d234fa)
+
+![image](https://github.com/user-attachments/assets/c3548d77-c036-4ac6-828d-f8fd26a57484)
+
+![image](https://github.com/user-attachments/assets/c0753601-aeeb-4af7-b291-d2e61347edaf)
+
+
+
 ## Features
 The application includes the following key features:
 
